@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="weather forecast application">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header> Weather DataBase</header>
+    <div class="container">
+        <div class = "input_Field">
+            <h3>Enter a City Name</h3>
+            <div class="twoInOne"> <!--search history -> next to input form-->
+                <input class="city_Name" type="text" placeholder="Eg. kyoto">
+                <select class="recent_Cities" style="display:none;"></select>
+            </div>
+            <button class="city_Search">Search</button>
+            <div class="or_Line"></div>
+            <button class="location_Search">Use Current Location</button>
+            <div class="loading-message" style="display: none;">Loading...</div>
+        </div>
+        <div class="info_weather">
+            <div class="current_Details">
+                <div class="details">
+                    <p><b>No data available. Please enter a city name!</b></p><!--initially no data is shown untill a city is searched-->
+                </div>
+            </div>
+            <div class="forecast_Box">
+                <h2>5 Days Weather Forecast</h2>
+                <ul class="forecast_Cards">
+                    <li class="card">
+                        <p><b>No data available.</b></p>
+                    </li>
+                    <li class="card">
+                        <p><b>No data available.</b></p>
+                    </li>
+                    <li class="card">
+                        <p><b>No data available.</b></p>
+                    </li>
+                    <li class="card">
+                        <p><b>No data available.</b></p>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
