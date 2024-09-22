@@ -89,14 +89,16 @@ const retrieveWeatherData = async (region, lat, lon) => {  // Function to get we
 const getCityLatLon = () => {   // Function to get city coordinates based on city name input
     const region = cityInput.value.trim();
     if (!region) return alert("Please enter a city name!");
-    showLoading(); // Show loading message
+    showLoading(); 
     fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${region}&limit=1&appid=${WEATHER_API_TOKEN}`)
         .then(res => {
             if (!res.ok) throw new Error("Unable to fetch coordinates. Please try again.");
             return res.json();
         })
         .then(data => {
-            if (!data.length) return alert(`No coordinates found for ${region}`);
+            if (!data.length){
+                hideLoading();
+                return alert(`No coordinates found for ${region}`); } 
             const { name, lat, lon } = data[0];
             retrieveWeatherData(name, lat, lon);
             addCityToDropdown(name);
